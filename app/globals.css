@@ -4,3 +4,105 @@
 .login-screen{min-height:100dvh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 15% 10%,#f0dfd8 0,transparent 42%),radial-gradient(ellipse at 90% 90%,#e6e5d8 0,transparent 38%),var(--cream)}.login-card{width:min(100%,450px);background:rgba(255,253,249,.88);border:1px solid var(--line);padding:clamp(30px,7vw,58px);text-align:center;box-shadow:var(--shadow)}.tiny-flower{font-size:27px;color:var(--rose);margin-bottom:14px}.login-card .eyebrow{justify-content:center}.login-card h1{font:400 clamp(45px,11vw,62px)/1.08 'Playfair Display',serif;letter-spacing:-1.5px;margin:16px 0}.login-card h1 em{color:var(--rose);font-weight:400}.login-copy{font:italic 16px/1.65 'Playfair Display',serif;color:var(--muted);margin:18px 0 30px}.login-form{text-align:left;display:flex;flex-direction:column;gap:10px}.password-wrap{display:flex;align-items:center;gap:10px;border:1px solid var(--line);padding-left:12px;color:var(--rose);background:#fffdfa}.password-wrap input{border:0;background:transparent;min-width:0}.login-form .primary-button{width:100%;margin-top:7px;height:46px}.login-foot{display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;color:var(--muted);margin:28px 0 0}.login-foot svg{color:var(--rose)}
 @media(max-width:760px){.app-shell{padding:0 15px}.topbar{height:66px}.brand{font-size:18px}.private-tag{font-size:8px}.hero-panel{grid-template-columns:1fr;margin-top:16px}.hero-image{min-height:280px;grid-row:1}.hero-content{padding:27px 23px 26px}.hero-content h1{font-size:49px}.hero-intro{margin:15px 0 19px}.hero-stats{gap:16px}.hero-stats strong{font-size:23px}.hero-stats span{font-size:8px}.add-top{padding:9px 11px}.intro-strip{margin-top:14px;padding:18px 19px}.intro-strip p:not(.eyebrow){font-size:15px}.scribble-heart{font-size:31px}.itinerary-section{padding:46px 0 30px}.section-head{align-items:flex-start;flex-direction:column;gap:16px}.section-head h2{font-size:38px}.section-head .outline-button{align-self:flex-start}.search-wrap{margin-top:20px}.date-heading{gap:12px;padding:13px 1px 13px 0}.date-badge{width:48px;height:53px}.date-meta strong{font-size:16px}.date-weekday{font-size:8px;letter-spacing:1px}.date-heart{padding:0 2px}.day-content{padding-left:0}.plan-grid{grid-template-columns:1fr;gap:13px}.plan-photo{height:200px}.plan-card-content{padding:16px}.empty-day{padding:12px 0 16px}.modal-backdrop{align-items:flex-end;padding:0}.editor-modal{width:100%;max-height:93dvh;padding:23px 19px calc(20px + env(safe-area-inset-bottom));border-bottom:0}.modal-head h2{font-size:30px}.form-two{grid-template-columns:1fr}.plan-form{gap:13px}.install-modal{width:100%;max-height:88dvh;margin:auto;padding:35px 25px;border-radius:3px}.app-footer{padding-bottom:calc(27px + env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.photo-step {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 253, 249, .92);
+  color: var(--rose);
+  z-index: 2;
+}
+
+.photo-step-left { left: 10px; }
+.photo-step-right { right: 10px; }
+
+.photo-count {
+  position: absolute;
+  bottom: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: rgba(38, 29, 27, .7);
+  color: white;
+  font-size: 10px;
+  z-index: 2;
+}
+
+.photo-preview-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.photo-preview-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: #fffaf6;
+}
+
+.photo-preview-thumb {
+  width: 62px;
+  height: 54px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-preview-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.upload-progress {
+  font-size: 11px;
+  color: var(--rose);
+}
+
+.plan-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reorder-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reorder-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--rose);
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.reorder-button:hover:not(:disabled) {
+  background: var(--pink);
+}
+
+.reorder-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
